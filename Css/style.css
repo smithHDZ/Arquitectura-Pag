@@ -1,0 +1,216 @@
+/* ------------------------------------------------------------- */
+/* -------Este bloque contiene estilos para los 2 HTML---------- */
+/* ------------------------------------------------------------- */
+/* -------Este bloque contiene estilos para el primer HTML------ */
+/* ------------------------------------------------------------- */
+body.logIn {
+  /* Cargamos los valores predeterminados para el fondo */
+  background-color: rgb(16, 9, 19);
+  /* Tamaño del fondo */
+  background-size: 100%;
+  /* Propiedades para que el fondo no se repita */
+  background-repeat: no-repeat;
+  /* Margen del fondo */
+  margin: auto;
+  /* propiedades especiales */
+  width: auto;
+  opacity: none;
+}
+
+/* ---Este contiene propiedades para los titulos y subtitilos --- */
+h1 {
+  font-size: 2.2rem;
+  font-family: 'Sono', sans-serif;
+  text-align: center;
+  
+}
+
+h2 {
+  /* Cargamos fonts y propiedades para los subtitlos */
+  font-family: 'Sono', sans-serif;
+  text-align: center;
+  font-size: 1.4rem;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 28px #33F0FF,
+      0 0 21px #33F0FF,
+      0 0 26px #33F0FF,
+      0 0 24px #33F0FF,
+      0 0 25px #33F0FF;
+  /* animation: pulsate 1.3s infinite alternate; */
+}
+
+h3.otherSubtitulo {
+  /* Cargamos propiedades para nuestro segundo subtitulo */
+  font-size: medium;
+  font-style: oblique;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+font {
+  border: 3px;
+  font-family: 'Sono', sans-serif;
+  font-weight: 100;
+  color: #fff;
+  font: medium;
+  font-size: larger;
+  font-stretch: expanded;
+  size: 4;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+input {
+  border-radius: 7px;
+  box-align: center;
+  box-shadow: #33F0FF 2px 1px;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------- */
+/* ---Este contiene propiedades para los errores de llenado ---- */
+error.text {
+  color: rgb(156, 22, 22);
+  text-align: end;
+  text-shadow: 2px, rgb(187, 36, 36);
+}
+
+/* ------------------------------------------------------------- */
+/* ------Este bloque contiene propiedades para los botones------ */
+button.logIn {
+  border-radius: 5px;
+  border-bottom: 3px;
+  border-color: rgb(238, 226, 238);
+  border-style: dotted;
+  font-size: medium;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------- */
+/* -------Este bloque contiene propiedades para las tablas------ */
+.form {
+  border-radius: 6px;
+  border-color: #bc13fe;
+  border-top-color: #dadada;
+  box-sizing: border-box;
+  border-block: inherit;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+.neonText {
+  color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 28px #bc13fe,
+      0 0 21px #bc13fe,
+      0 0 26px #bc13fe,
+      0 0 24px #bc13fe,
+      0 0 25px #bc13fe;
+}
+
+/* ------------------------------------------------------------- */
+/* ---Este bloque contiene propiedades para el uso de lps div--- */
+div {
+  animation: pulsate 1.5s infinite alternate;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 0.4em;
+  box-shadow: 0 0 .2rem #fff,
+      0 0 .2rem #fff,
+      0 0 2rem #bc13fe,
+      0 0 0.8rem #bc13fe,
+      0 0 2.8rem #bc13fe,
+      inset 0 0 1.3rem #bc13fe;
+  /* text-align: center; */   
+  width: 81.5rem;
+  height: 38.1rem;
+}
+
+/* ------------------------------------------------------------- */
+/* ----Este bloque contiene una animación para nuestro texto--- */
+@keyframes pulsate {
+
+  100% {
+
+      text-shadow:
+          0 0 4px #fff,
+          0 0 11px #fff,
+          0 0 19px #fff,
+          0 0 40px #bc13fe,
+          0 0 80px #bc13fe,
+          0 0 90px #bc13fe,
+          0 0 100px #bc13fe,
+          0 0 150px #bc13fe;
+
+  }
+
+  0% {
+
+      text-shadow:
+          0 0 2px #fff,
+          0 0 4px #fff,
+          0 0 6px #fff,
+          0 0 10px #bc13fe,
+          0 0 45px #bc13fe,
+          0 0 55px #bc13fe,
+          0 0 70px #bc13fe,
+          0 0 80px #bc13fe;
+  }
+
+}
+
+/* ------------------------------------------------------------- */
+/* ------Este bloque contiene estilos para el primer HTML------- */
+body.ndpage {
+  background-color: #dadada;
+  background-position: 8px;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: repeat;
+}
+
+/* ------------------------------------------------------------- */
+/* -Este bloque contiene estilos para los titulos y subtitulos-- */
+h1.nd {
+  text-justify: auto;
+  text-align: center;
+  text-decoration: dotted;
+  text-shadow: none;
+  font: 100;
+  font-size: medium;
+  font-style: oblique;
+}
+
+h2.subtitulos {
+  text-align: center;
+  text-transform: lowercase;
+  text-indent: inherit;
+}
+
+/* ------------------------------------------------------------- */
+/* ------- Este bloque contiene estilos para las imagenes ------ */
+img.secondPage {
+  align-items: center;
+  width: auto;
+  padding: auto;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
