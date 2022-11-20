@@ -42,6 +42,7 @@ h2 {
   /* animation: pulsate 1.3s infinite alternate; */
 }
 
+
 h3.otherSubtitulo {
   /* Cargamos propiedades para nuestro segundo subtitulo */
   font-size: medium;
@@ -121,6 +122,7 @@ button.logIn {
 /* ---Este bloque contiene propiedades para el uso de lps div--- */
 div {
   animation: pulsate 1.5s infinite alternate;
+  
   border: 0.2rem solid #fff;
   border-radius: 2rem;
   padding: 0.4em;
@@ -131,7 +133,7 @@ div {
       0 0 2.8rem #bc13fe,
       inset 0 0 1.3rem #bc13fe;
   /* text-align: center; */   
-  width: 81.5rem;
+  width: 78.5rem;
   height: 38.1rem;
 }
 
@@ -202,6 +204,48 @@ img.secondPage {
   align-items: center;
   width: auto;
   padding: auto;
+}
+
+p{
+	text-align: justify;
+	font-size: 20px;
+  color: #ffffff;
+  background-color: #000000;
+  text-overflow: hidden;
+  width: 98%;
+  height: 40;
+  text-align: justify;
+}
+.just{
+	text-align: center;
+	
+}
+a.dis{
+	color: rgb(248, 245, 245);
+	display: block;
+	text-decoration: none;
+	border-style: solid;
+	padding: 0px;
+	font-size: 20px;
+}
+a:visited{
+	color: #888a05;
+}
+a:hover{
+	background-color: #888a05;
+	color: white;
+	text-decoration: underline wavy;
+}
+.divizq{
+	top: 30px;
+	left: 1700px;
+}
+.divder{
+	top: 40px;
+	left:100px;
+}
+.divder2{
+	right: 1000;
 }
 
 /* ------------------------------------------------------------- */
