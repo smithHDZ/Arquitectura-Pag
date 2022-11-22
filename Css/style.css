@@ -57,6 +57,21 @@ h4 {
       0 0 25px #1900fa;
 }
 
+h5{
+  font-family: 'Sono', sans-serif;
+  text-align: center;
+  font-size: 4.8rem;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 28px #ff3333,
+      0 0 21px #ff3333,
+      0 0 26px #ff3333,
+      0 0 24px #ff3333,
+      0 0 25px #ff3333;
+}
+
 
 h3.otherSubtitulo {
   /* Cargamos propiedades para nuestro segundo subtitulo */
@@ -273,6 +288,7 @@ dd{
 	text-align: justify;
 	font-size: 20px;
 }
+
 
 
 /* ------------------------------------------------------------- */
