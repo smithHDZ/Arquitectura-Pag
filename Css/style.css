@@ -29,7 +29,7 @@ h2 {
   /* Cargamos fonts y propiedades para los subtitlos */
   font-family: 'Sono', sans-serif;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-shadow:
       0 0 7px #fff,
       0 0 10px #fff,
@@ -262,6 +262,18 @@ a:hover{
 .divder2{
 	right: 1000;
 }
+
+dt{
+	font-weight: bold;
+	color: green;
+  font-size: 20px;
+}
+dd{
+  color: #ffffff;
+	text-align: justify;
+	font-size: 20px;
+}
+
 
 /* ------------------------------------------------------------- */
 /* ------------------------------------------------------------- */
