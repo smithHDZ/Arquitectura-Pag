@@ -433,55 +433,138 @@ body{
    <a name="8"></a>
    <h2>2.3.3 Modos de Direccionamiento.</h2>
        
-       <p>
-   Contar con diferentes formatos de instrucciones, implica contar con diferentes formas de obtener los operandos de las instrucciones. Por lo general a estas múltiples formas se les conoce como modos de direccionamiento. Los modos de direccionamiento en MIPS son:</p>
+    <p>Contar con diferentes formatos de instrucciones, implica contar 
+    con diferentes formas de obtener los operandos de las instrucciones. 
+    Por lo general a estas múltiples formas se les conoce como modos de 
+    direccionamiento. Los modos de direccionamiento en MIPS son:</p>
    
-   <dd>• Direccionamiento por registro, donde los operandos son registros: Los datos a operar están contenidos en 2 registros de 32 bits y el resultado será colocado en otro registro, del mismo tamaño.
-   Ejemplos de instrucciones que usan este modo de direccionamiento: add, sub, slt, etc.
-       <a href="../imagenes/dire1.jpg"><img class="dire" src="../imagenes/dire1.jpg"></dd></a>
-   
-   <dd>• Direccionamiento base o desplazamiento: donde uno de los operandos está en una localidad de memoria cuya dirección es la suma de un registro y una constante que forma parte de la misma instrucción.
-   Ejemplos de instrucciones que usan este modo de direccionamiento: lw, sw, etc.</dd><a href="../imagenes/dire2.jpg"><img class="dire" src="../imagenes/dire2.jpg"></a>
-   
-   <dd>• Direccionamiento inmediato, donde uno de los operandos es una constante que está en la misma instrucción.
-   Ejemplos de instrucciones que usan este modo de direccionamiento: addi, slti, etc.</dd><a href="../imagenes/dire3.jpg"><img class="dire" src="../imagenes/dire3.jpg"></a>
-   
-   <dd>• Direccionamiento relativo al PC, donde se forma una dirección sumando una constante, que está en la instrucción, con el registro PC (Program Counter). El resultado de la suma corresponde a la dirección destino si un brinco condicional se va a realizar.
-   Ejemplos de instrucciones que usan este modo de direccionamiento: beq y bne.</dd><a href="../imagenes/dire4.jpg"><img class="dire" src="../imagenes/dire4.jpg"></a>
-   
-   <dd>• Direccionamiento pseudo directo, donde la dirección destino de un salto corresponde a la concatenación de 26 bits que están en la misma instrucción con los bits más significativos del PC.
-   Ejemplos de instrucciones que usan este modo de direccionamiento: j y jal.<a href="../imagenes/dire5.jpg"><img class="dire" src="../imagenes/dire5.jpg"></a></dd>
-   
-   <p>Es importante mencionar que estamos estudiando una arquitectura con direcciones de 32 bits, sin embargo, MIPS, como muchas otras arquitecturas, tiene una extensión que maneja direcciones de 64 bits. Esto como una respuesta a la necesidad de manejar programas cada vez más grandes.</p><a href="#99">Click Aqui para regresar al Inicio de la p&aacute;gina.</a><hr>
-   
+    <dd>• Direccionamiento por registro, donde los operandos son 
+        registros: Los datos a operar están contenidos en 2 registros 
+        de 32 bits y el resultado será colocado en otro registro, 
+        del mismo tamaño.
+        Ejemplos de instrucciones que usan este modo de direccionamiento: 
+        add, sub, slt, etc.
+     </dd>
+
+     <br><br><br>
+     <a href="../imagenes/dire1.jpg">
+     <img class="dire" src="../imagenes/dire1.jpg"></a>
+     <br><br>
+
+   <dd>• Direccionamiento base o desplazamiento: donde uno de los 
+    operandos está en una localidad de memoria cuya dirección es 
+    la suma de un registro y una constante que forma parte de la 
+    misma instrucción.
+    Ejemplos de instrucciones que usan este modo de direccionamiento: 
+    lw, sw, etc.</dd>
+    
+    <br><br><br>
+    <a href="../imagenes/dire2.jpg">
+        <img class="dire" src="../imagenes/dire2.jpg"></a>
+    <br><br>
+
+    <dd>• Direccionamiento inmediato, donde uno de los operandos es 
+    una constante que está en la misma instrucción.
+    Ejemplos de instrucciones que usan este modo de 
+    direccionamiento: addi, slti, etc.</dd>
+
+        <br><br><br>
+        <a href="../imagenes/dire3.jpg">
+            <img class="dire" src="../imagenes/dire3.jpg"></a>
+        <br><br>    
+
+   <dd>• Direccionamiento relativo al PC, donde se forma una 
+    dirección sumando una constante, que está en la instrucción, 
+    con el registro PC (Program Counter). El resultado de la suma 
+    corresponde a la dirección destino si un brinco condicional 
+    se va a realizar.
+    Ejemplos de instrucciones que usan este modo de 
+    direccionamiento: beq y bne.</dd>
+    
+    <br><br><br>
+    <a href="../imagenes/dire4.jpg">
+    <img class="dire" src="../imagenes/dire4.jpg"></a>
+    <br><br>
+
+   <dd>• Direccionamiento pseudo directo, donde la dirección 
+    destino de un salto corresponde a la concatenación de 26 
+    bits que están en la misma instrucción con los bits más 
+    significativos del PC.
+    Ejemplos de instrucciones que usan este modo de 
+    direccionamiento: j y jal.</dd>
+    <br><br><br>
+    <a href="../imagenes/dire5.jpg">
+        <img class="dire" src="../imagenes/dire5.jpg"></a>
+    <br><br>
+    <p>Es importante mencionar que estamos estudiando una 
+    arquitectura con direcciones de 32 bits, sin embargo, 
+    MIPS, como muchas otras arquitecturas, tiene una 
+    extensión que maneja direcciones de 64 bits. Esto como 
+    una respuesta a la necesidad de manejar programas cada 
+    vez más grandes.</p>
+    
+    <br> <br> <br>
+        <h1 class="nd"><a href="#99"> INICIO </a></h1>
+        <br> <br>
+
    <a name="9"></a>
    <h2>2.4 Casos de estudio de CPU reales.</h2>
        
        <p>
            <b>I-8086</b> <br>
-   Los modos de direccionamiento del 8086 (Crawford & Gelsinger, 1987) son muy irregulares. Los registros del procesador, se usan para contener los datos con que se está trabajando puesto que el acceso a los registros es mucho más rápido que los accesos a memoria. Se pueden realizar operaciones aritméticas y lógicas, comparaciones, entre otras.<br>
-   Hay un campo para un registro (reg), que especiﬁca uno de los operandos, y otros dos campos (mod y r/m) para el otro.
+            Los modos de direccionamiento del 8086 (Crawford & Gelsinger, 
+            1987) son muy irregulares. Los registros del procesador, se 
+            usan para contener los datos con que se está trabajando puesto 
+            que el acceso a los registros es mucho más rápido que los 
+            accesos a memoria. Se pueden realizar operaciones aritméticas 
+            y lógicas, comparaciones, entre otras.<br>
+            Hay un campo para un registro (reg), que especiﬁca uno de los 
+            operandos, y otros dos campos (mod y r/m) para el otro.
        </p>
    
-   <p>
-       Los modos del 8086 son indirectos por registro, indexados o directos por registro.<a href="../imagenes/mod.jpg"><img class="dire" src="../imagenes/mod.jpg" align="right"></a>
+   <p>Los modos del 8086 son indirectos por registro, indexados o 
+    directos por registro.
+    
+    <br><br><br>
+    <a href="../imagenes/mod.jpg">
+        <img src="../imagenes/mod.jpg"></a>
+    
    
    <dt>Registros Propósito General:</dt>
-   <dd>• Registro AX: El registro AX es el registro acumulador, es utilizado para operaciones que implican entrada/salida, y multiplicación y división (estas dos últimas en conjunto con el registro DX)</dd>
-   <dd>• Registro BX: El registro BX es el registro base, y es el único registro de propósito general que puede ser un índice para direccionamiento indexado.</dd>
-   <dd>• Registro CX: El registro CX es conocido como el registro contador. Puede contener un valor para controlar el número de veces que un ciclo se repite.</dd>
+   <dd>• Registro AX: El registro AX es el registro acumulador, 
+    es utilizado para operaciones que implican entrada/salida, 
+    y multiplicación y división (estas dos últimas en conjunto 
+    con el registro DX)</dd>
+   <dd>• Registro BX: El registro BX es el registro base, y es 
+    el único registro de propósito general que puede ser un 
+    índice para direccionamiento indexado.</dd>
+   <dd>• Registro CX: El registro CX es conocido como 
+    el registro contador. Puede contener un valor para controlar 
+    el número de veces que un ciclo se repite.</dd>
    <dd>• Registro DX: El registro DX es el registro de datos.</dd>
    <dt>Registros Índice:</dt>
-   <dd>• Registro SI: El registro índice fuente de 16 bits es requerido por algunas operaciones con cadenas de caracteres.</dd>
-   <dd>• Registro DI: El registro índice destino también es requerido por algunas operaciones con cadenas de caracteres.</dd>
+   <dd>• Registro SI: El registro índice fuente de 16 bits es requerido 
+    por algunas operaciones con cadenas de caracteres.</dd>
+   <dd>• Registro DI: El registro índice destino también es requerido 
+    por algunas operaciones con cadenas de caracteres.</dd>
    <dt>Registros Apuntadores:</dt>
-   <dd>• Registro SP: Apuntador de pila de 16 bits proporciona un valor de desplazamiento que se refiere a la palabra actual que está siendo procesada en la pila.</dd>
-   <dd>• Registro BP: El apuntador base de 16 bits facilita la referencia de parámetros dentro de la pila.</dd>
+   <dd>• Registro SP: Apuntador de pila de 16 bits proporciona un
+     valor de desplazamiento que se refiere a la palabra actual 
+     que está siendo procesada en la pila.</dd>
+   <dd>• Registro BP: El apuntador base de 16 bits facilita la 
+    referencia de parámetros dentro de la pila.</dd>
    </p>	
    
    <p>
        <b>Motorola 68000</b><br>
-   En el Motorola 68000 el mismo direccionamiento lleva implícito el tipo de registro sobre el que trabaja (direcciones o datos). Está basado en dos bancos de 8 registros de 32 bits. Un banco es de datos (Dn) y el otro de punteros (An). Además contiene un contador de programa de 32 bits y un registro de estado de 16 bits. Los registros de datos (D0 a D7) se pueden usar como registros de 32 bits (.l), 16 bits (.w) y 8 bits (.b). Cualquiera de ellos puede usarse como acumulador, índice o puntero.
+   En el Motorola 68000 el mismo direccionamiento lleva implícito el 
+   tipo de registro sobre el que trabaja (direcciones o datos). Está 
+   basado en dos bancos de 8 registros de 32 bits. Un banco es de 
+   datos (Dn) y el otro de punteros (An). Además contiene un contador 
+   de programa de 32 bits y un registro de estado de 16 bits. Los 
+   registros de datos (D0 a D7) se pueden usar como registros de 
+   32 bits (.l), 16 bits (.w) y 8 bits (.b). Cualquiera de ellos 
+   puede usarse como acumulador, índice o puntero.
    <dt>Acepta los siguientes modos de direccionamiento:</dt>
    <dd>• Implícito (o inherente).
    <dd>• Inmediato.
@@ -492,9 +575,22 @@ body{
    <dd>• Relativo a PC con índice y desplazamiento.
    </p>
    
-   <p>
-       <b>80386</b><br>
-   La CPU está compuesta por la unidad de ejecución y la unidad de instrucciones. La unidad de ejecución contiene los ocho registros de 32 bits de propósito general que se utilizan para el cálculo de direcciones y operaciones con datos y un barrel shifter de 64 bits que se utiliza para acelerar las operaciones de desplazamiento, rotación, multiplicación y división. Para este microprocesador existe un modo nuevo que requiere un byte adicional denominado SIB (escala, índice, base) que se añade al byte de operandos y cuyo formato es el siguiente: Ese byte adicional especifica un factor de escala y dos registros (base e índice).</p><a href="../imagenes/sib.jpg"><img src="../imagenes/sib.jpg" align="right"></a>
+   <p><b>80386</b><br>
+   La CPU está compuesta por la unidad de ejecución y la unidad de 
+   instrucciones. La unidad de ejecución contiene los ocho registros 
+   de 32 bits de propósito general que se utilizan para el cálculo 
+   de direcciones y operaciones con datos y un barrel shifter de 
+   64 bits que se utiliza para acelerar las operaciones de 
+   desplazamiento, rotación, multiplicación y división. 
+   Para este microprocesador existe un modo nuevo que 
+   requiere un byte adicional denominado SIB (escala, 
+   índice, base) que se añade al byte de operandos y cuyo 
+   formato es el siguiente: Ese byte adicional especifica un 
+   factor de escala y dos registros (base e índice).</p>
+   
+
+
+   <a href="../imagenes/sib.jpg"><img src="../imagenes/sib.jpg" align="right"></a>
    
    <dt>El 80386 tiene registros de 32 bits en las siguientes categorías:</dt>
    <dd>• Registros de propósito general.
@@ -505,13 +601,11 @@ body{
    <dd>• Registros de direcciones de sistema.
    <dd>• Registros de depuración (debug) (nuevos en el 80386).
    <dd>• Registros de test (nuevos en el 80386).
-       
-   </p><a href="#99">Click Aqui para regresar al Inicio de la p&aacute;gina.</a><hr>
+
    
-      
-
-
-
+   <br> <br> <br>
+        <h1 class="nd"><a href="#99"> INICIO </a></h1>
+        <br> <br>   
 
 </body>
 
