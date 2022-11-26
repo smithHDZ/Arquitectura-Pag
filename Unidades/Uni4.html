@@ -17,6 +17,8 @@ body{
      <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
    
 <body>   
+
+    <a name="99"></a>
     <table class="default">
         <tr>
         <td>
@@ -74,6 +76,464 @@ body{
            </tr>
        </table>
 
+       <h5> UNIDAD 4 </h5>
+
+       <table>
+        <tr>
+            <td>
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+            </td>
+            <td id="menu">
+                <h4> <a href= "#0">
+                4.1 Aspectos Básicos de la computación paralela.</a></h4>
+                <h4><a href= "#1">4.2 Tipos de computación paralela.</a></h4>
+                <h4><a href= "#2">4.2.1 Clasificación.</a></h4>
+                <h4><a href= "#3">4.2.2 Arquitectura de computadores secuenciales.</a></h4>
+                <h4><a href= "#4">4.3 Sistemas de memoria (compartida).</a></h4>
+                <h4><a href= "#5">4.3.1 Redes de interconexión dinámica (indirecta).</a></h4>
+                <h4><a href= "#6">4.3.2 Memoria principal.</a></h4>
+                <h4><a href= "#7">4.3.3 Coherencia De Caché.</a></h4>
+                <h4><a href= "#8">4.4 Sistemas de memoria distribuida (Multicomputadores).</a></h4>
+                <h4><a href= "#9">4.4.1 Redes de interconexión estáticas.</a></h4>
+                <h4><a href= "#10">4.5 Casos para estudio.</a></h4>
+            </td>
+        </tr>
+       </table>
+
+       <br><br><br>
+
+       
+<a name="0"></a>
+	<h2 class="red">4.1 Aspectos Básicos de la computación paralela.</h2>
+<a name="0"></a>
+	
+	<h2>4.1 Aspectos Básicos de la computación paralela.</h2>
+<a href="../imagenes/comn.jpg"><img src="../imagenes/comn.jpg" ></a>
+	<p>La computación paralela es una forma de cómputo en la que muchas instrucciones 
+        se ejecutan simultáneamente, operando sobre el principio de que problemas 
+        grandes, a menudo se pueden dividir en unos más pequeños, que luego son 
+        resueltos simultáneamente (en paralelo). </p>
+
+    <p>Hay varias formas diferentes de computación paralela: paralelismo a 
+        nivel de bit, paralelismo a nivel de instrucción, paralelismo de 
+        datos y paralelismo de tareas. El paralelismo se ha empleado durante 
+        muchos años, sobre todo en la computación de altas prestaciones, pero 
+        el interés en ella ha crecido últimamente debido a las limitaciones 
+        físicas que impiden el aumento de la frecuencia. Como el consumo de 
+        energía —y por consiguiente la generación de calor— de las computadoras 
+        constituye una preocupación en los últimos años, la computación en 
+        paralelo se ha convertido en el paradigma dominante en la arquitectura 
+        de computadores, principalmente en forma de procesadores multinúcleo.
+	</p>
+    <p>Las computadoras paralelas pueden clasificarse según el nivel de paralelismo 
+        que admite su hardware: equipos con procesadores multinúcleo y 
+        multi-procesador que tienen múltiples elementos de procesamiento 
+        dentro de una sola máquina y los clústeres, MPPS y grids que 
+        utilizan varios equipos para trabajar en la misma tarea. Muchas 
+        veces, para acelerar la tareas específicas, se utilizan arquitecturas 
+        especializadas de computación en paralelo junto a procesadores 
+        tradicionales.</p>
+
+    <p>Los programas informáticos paralelos son más difíciles de escribir que 
+        los secuenciales, porque la concurrencia introduce nuevos tipos de 
+        errores de software, siendo las condiciones de carrera los más comunes. 
+        La comunicación y sincronización entre diferentes subtareas son algunos 
+        de los mayores obstáculos para obtener un buen rendimiento del 
+        programa paralelo.<br>
+    La máxima aceleración posible de un programa como resultado de la 
+    paralelización se conoce como la ley de Amdahl.
+
+        <br> <br> <br>
+        <h1 class="nd"><a href="#99"> INICIO </a></h>
+        <br> <br>
+
+<a name="1"></a>
+	<h2>4.2 Tipos de computación paralela.</h2>
+	
+    <a name="2"></a>
+	<h2>4.2.1 Clasificación.</h2>
+	<a href="../imagenes/flynn.jpg"><img src="../imagenes/flynn.jpg"></a>
+    <p>La clasificación de Flynn ha demostrado funcionar bastante bien 
+        para la tipificación de sistemas, y se ha venido usando desde 
+        décadas por la mayoría de los arquitectos de computadores. 
+        Sin embargo, los avances en tecnología y diferentes 
+        topologías, han llevado a sistemas que no son tan fáciles 
+        de clasificar dentro de los 4 tipos de Flynn. Por ejemplo, 
+        los procesadores vectoriales no encajan adecuadamente en 
+        esta clasificación, ni tampoco las arquitecturas hibridas. 
+        Para solucionar esto se han propuesto otras clasificaciones, 
+        donde los tipos SIMD y MIMD de Flynn se suelen conservar, 
+        pero que sin duda no han tenido el éxito de la de Flynn.</p>
+
+    <p>La figura de la derecha muestra una taxonomía ampliada que 
+        incluye alguno de los avances en arquitecturas de 
+        computadores en los últimos años. No obstante, tampoco 
+        pretende ser una caracterización completa de todas las 
+        arquitecturas paralelas existentes.		
+	
+	<a name="3"></a>
+	<h2>4.2.2 Arquitectura de computadores secuenciales.</h2>
+	<p>Probablemente la clasificación más popular de computadores 
+        sea la clasificación de Flynn. Esta taxónoma de las 
+        arquitecturas está basada en la clasificación atendiendo 
+        al flujo de datos e instrucciones en un sistema. Un flujo 
+        de instrucciones es el conjunto de instrucciones secuenciales 
+        que son ejecutadas por un único procesador, y un flujo de 
+        datos es el flujo secuencial de datos requeridos por el 
+        flujo de instrucciones. Con estas consideraciones, Flynn 
+        clasifica los sistemas en cuatro categorías:
+
+    <dd><b>SISD</b> (Single Instruction stream, Single Data 
+        stream) Flujo único de instrucciones y flujo único 
+        de datos. Este el concepto de arquitectura serie de 
+        Von Neumann donde, en cualquier momento, sólo se está 
+        ejecutando una única instrucción. A menudo a los SISD 
+        se les conoce como computadores serie escalares. Todas 
+        las maquinas SISD poseen un registro simple que se llama 
+        contador de programa que asegura la ejecución en serie 
+        del programa. Conforme se van leyendo las instrucciones 
+        de la memoria, el contador de programa se actualiza para 
+        que apunte a la siguiente instrucción a procesar en serie. 
+        Prácticamente ningún computador puramente SISD se fabrica 
+        hoy en día ya que la mayoría de procesadores modernos 
+        incorporan algún grado de paralelizacion como es la 
+        segmentación de instrucciones o la posibilidad de lanzar 
+        dos instrucciones a un tiempo (superescalares).</dd><br>
+
+    <dd><b>MISD </b>(Multiple Instruction stream, Single Data 
+        stream) Flujo múltiple de instrucciones y único flujo 
+        de datos. Esto significa que varias instrucciones 
+        actúan sobre el mismo y único trozo de datos. Este 
+        tipo de máquinas se pueden interpretar de dos maneras. 
+        Una es considerar la clase de máquinas que requerirían 
+        que unidades de procesamiento diferentes recibieran 
+        instrucciones distintas operando sobre los mismos datos. 
+        Esta clase de arquitectura ha sido clasificada por 
+        numerosos arquitectos de computadores como impracticable 
+        o imposible, y en estos momentos no existen ejemplos que 
+        funcionen siguiendo este modelo. Otra forma de interpretar 
+        los MISD es como una clase de máquinas donde un mismo flujo 
+        de datos fluye a través de numerosas unidades procesadoras. 
+        Arquitecturas altamente segmentadas, como los arrays sistólicos 
+        o los procesadores vectoriales, son clasificados a menudo bajo 
+        este tipo de máquinas. Las arquitecturas segmentadas, o 
+        encauzadas, realizan el procesamiento vectorial a través 
+        de una serie de etapas, cada una ejecutando una función 
+        particular produciendo un resultado intermedio. La razón 
+        por la cual dichas arquitecturas son clasificadas como MISD 
+        es que los elementos de un vector pueden ser considerados 
+        como pertenecientes al mismo dato, y todas las etapas del 
+        cauce representan múltiples instrucciones que son aplicadas 
+        sobre ese vector.</dd><br>
+
+    <dd><b>SIMD</b> (Single Instruction stream, Multiple Data 
+        stream) Flujo de instrucción simple y flujo de datos 
+        múltiple. Esto significa que una única instrucción es 
+        aplicada sobre diferentes datos al mismo tiempo. En las 
+        máquinas de este tipo, varias unidades de procesado 
+        diferentes son invocadas por una única unidad de control. 
+        Al igual que las MISD, las SIMD soportan procesamiento 
+        vectorial (matricial) asignando cada elemento del vector 
+        a una unidad funcional diferente para procesamiento 
+        concurrente.
+        Por ejemplo, el cálculo de la paga para cada trabajador 
+        en una empresa, es repetir la misma operación sencilla 
+        para cada trabajador; si se dispone de una arquitectura 
+        SIMD esto se puede calcular en paralelo para cada trabajador. 
+        Por esta facilidad en la paralelizacion de vectores de datos 
+        (los trabajadores formarían un vector) se les llama también 
+        procesadores matriciales.</dd><br>
+
+    <dd><b>MIMD</b> (Multiple Instruction stream, Multiple Data 
+        stream) Flujo de instrucciones múltiple y flujo de datos 
+        múltiple. Son máquinas que poseen varias unidades 
+        procesadoras en las cuales se pueden realizar múltiples 
+        instrucciones sobre datos diferentes de forma simultánea. 
+        Las MIMD son las más complejas, pero son también las que 
+        potencialmente ofrecen una mayor eficiencia en la ejecución 
+        concurrente o paralela. Aquí la concurrencia implica que no 
+        sólo hay varios procesadores operando simultáneamente, sino 
+        que además hay varios programas (procesos) ejecutándose 
+        también al mismo tiempo.</dd>
+
+        <br> <br> <br>
+        <h1 class="nd"><a href="#99"> INICIO </a></h>
+        <br> <br>
+
+	<a name="4"></a>	
+	<h2 >4.3 Sistemas de memoria (compartida).</h2>
+	<a name="5"></a>
+	<h2>4.3.1 Redes de interconexión dinámica (indirecta).</h2>
+	<p>Uno de los criterios más importantes para la clasificación 
+        de las redes es el que tiene en cuenta la situación de la 
+        red en la máquina paralela, dando lugar a dos familias de 
+        redes: redes estáticas y redes dinámicas. Una red estática 
+        es una red cuya topología queda definida de manera 
+        definitiva y estable durante la construcción de 
+        la máquina paralela.</p>
+
+    <p>La red simplemente une los diversos elementos de 
+        acuerdo a una configuración dada. Se utiliza 
+        sobre todo en el caso de los multicomputadores 
+        para conectar los diversos procesadores que posee 
+        la máquina. Por la red sólo circulan los mensajes 
+        entre procesadores, por lo que se dice que la red 
+        presenta un acoplamiento débil. En general, en las 
+        redes estáticas se exige poca carga a la red.<br>
+
+    Una red dinámica es una red cuya topología puede variar 
+    durante el curso de la ejecución de un programa paralelo 
+    o entre dos ejecuciones de programas. La red está 
+    constituida por elementos materiales específicos, 
+    llamados commutadores o switches.</p>
+
+    <p>Las redes dinámicas se utilizan sobre todo en los 
+        multiprocesadores. En este caso, la red une los 
+        procesadores a los bancos de memoria central. 
+        Cualquier acceso de un procesador a la memoria 
+        (bien sea para acceder a los datos o a las instrucciones) 
+        debe pasar a través de la red, por lo se dice que la red 
+        tiene un acoplamiento fuerte. La red debe poseer un 
+        rendimiento extremadamente bueno para no demorar 
+        demasiado a los procesadores que acceden a memoria.
+
+	<a name="6"></a>
+	<h2>4.3.2 Memoria principal.</h2>
+	<p>Memoria primaria (MP), memoria principal, memoria central 
+        o memoria interna es la memoria de la computadora donde 
+        se almacenan temporalmente tanto los datos como los 
+        programas que la unidad central de procesamiento (CPU) 
+        está procesando o va a procesar en un determinado 
+        momento. Por su función, la MP debe ser inseparable 
+        del microprocesador o CPU, con quien se comunica a 
+        través del bus de datos y el bus de direcciones. 
+        El ancho del bus determina la capacidad que posea 
+        el microprocesador para el direccionamiento de 
+        direcciones en memoria.<br>
+
+    En algunas ocasiones suele llamarse “memoria interna” 
+    porque a diferencia de los dispositivos de memoria 
+    secundaria, la MP no puede extraerse tan fácilmente.
+
+    Esta clase de memoria es volátil, es decir que cuando 
+    se corta la energía eléctrica, se borra toda la 
+    información que estuviera almacenada en ella.</p>
+    <br><br><br>
+
+    <img src="../imagenes/mp.jpg">
+    
+    <br><br>
+
+    <p>La MP es el núcleo del subsistema de memoria de un sistema 
+        informático, y posee una menor capacidad de almacenamiento 
+        que la memoria secundaria, pero una velocidad millones de 
+        veces superior. Cuanto mayor sea la cantidad de memoria, 
+        mayor será la capacidad de almacenamiento de datos.<br>
+
+    Cuando la CPU tiene que ejecutar un programa, primero lo 
+    coloca en la memoria y después lo empieza a ejecutar. Lo 
+    mismo ocurre cuando necesita procesar una serie de datos; 
+    antes de poder procesarlos los tiene que llevar a la 
+    memoria principal.<br>
+
+    Dentro de la memoria de acceso aleatorio (RAM) existe 
+    una clase de memoria denominada memoria caché, que se 
+    caracteriza por ser más rápida que las demás, permitiendo 
+    que el intercambio de información entre la CPU y la MP 
+    sea a mayor velocidad.</p>
+
+    <p>La estructura de la memoria principal ha cambiado en 
+        la historia de las computadoras. Desde los años 1980 
+        es prevalentemente una unidad dividida en celdas que 
+        se identifican mediante una dirección. Está formada 
+        por bloques de circuitos integrados o chips capaces 
+        de almacenar, retener o "memorizar" información 
+        digital, es decir, valores binarios; a dichos 
+        bloques tiene acceso el microprocesador de la 
+        computadora.</p>
+
+    <a name="7"></a>
+    <h2>4.3.3 Coherencia De Caché.</h2>
+    <p>La coherencia de cache hace referencia a la integridad de 
+        los datos almacenados en las caches locales de los 
+        recursos compartidos. La coherencia de la cache es 
+        un caso especial de la coherencia de memoria.</p>
+        <br><br>
+    <a href="../imagenes/coche.jpg"><img src ="../imagenes/coche.jpg"></a>
+        <br><br>
+
+
+    <p>Es un componente de hardware o software que guarda datos 
+        para que las solicitudes futuras de esos datos se puedan 
+        atender con mayor rapidez; los datos almacenados en una 
+        caché pueden ser el resultado de un cálculo anterior o 
+        el duplicado de datos almacenados en otro lugar, 
+        generalmente, da velocidad de acceso más rápido. 
+        Se produce un acierto de caché cuando los datos 
+        solicitados se pueden encontrar en esta, mientras 
+        que un fallo de caché ocurre cuando no están dichos 
+        datos. La lectura de la caché es más rápida que volver 
+        a calcular un resultado o leer desde un almacén de datos 
+        más lento; por lo tanto, cuantas más solicitudes se 
+        puedan atender desde la memoria caché, más rápido 
+        funcionará el sistema.
+    Cuando hablamos de una caché de memoria nos referimos a 
+    la memoria de acceso rápido de una unidad central de 
+    procesamiento (CPU), que guarda temporalmente los datos 
+    recientes de los procesados (información).</p>
+
+    <p>La memoria caché es un búfer especial de memoria que poseen 
+    las computadoras, que funciona de manera semejante a la memoria 
+    principal, pero es de menor tamaño y de acceso más rápido. Nace 
+    cuando las memorias ya no eran capaces de acompañar a la velocidad 
+    del procesador, por lo que se puede decir que es una memoria 
+    auxiliar, que posee una gran velocidad y eficiencia y es usada 
+    por el microprocesador para reducir el tiempo de acceso a datos 
+    ubicados en la memoria principal que se utilizan con más frecuencia.
+    La caché es una memoria que se sitúa entre la unidad central de 
+    procesamiento (CPU) y la memoria de acceso aleatorio (RAM) para 
+    acelerar el intercambio de datos.</p>
+
+    <p>Cuando se accede por primera vez a un dato, se hace una 
+    copia en la caché; los accesos siguientes se realizan a 
+    dicha copia, haciendo que sea menor el tiempo de acceso 
+    medio al dato. Cuando el microprocesador necesita leer o 
+    escribir en una ubicación en memoria principal, primero 
+    verifica si una copia de los datos está en la caché; si es 
+    así, el microprocesador de inmediato lee o escribe en la 
+    memoria caché, que es mucho más rápido que de la lectura o 
+    la escritura a la memoria principal.<br>
+
+    De forma similar, cuando hablamos de caché software hablamos 
+    de un espacio de memoria que contiene los datos calculados o 
+    copiados desde un espacio más lento. Un ejemplo habitual es 
+    hablar de la caché del navegador web, este espacio en disco 
+    contiene la información temporal descargada desde Internet 
+    o red interna, que por la naturaleza del sistema, siempre 
+    tendrá una velocidad más lenta que el disco físico de la 
+    máquina.</p>
+        
+        <br> <br> <br>
+        <h1 class="nd"><a href="#99"> INICIO </a></h>
+        <br> <br>
+
+<a name="8"></a>
+<h2 class="derecha">4.4 Sistemas de memoria distribuida 
+    (Multicomputadores).</h2>
+<a name="9"></a>
+<h2>4.4.1 Redes De Interconexión Estática</h2>
+<p>Las redes estáticas emplean enlaces directos fijos entre 
+los nodos. Estos enlaces, una vez fabricado el sistema son 
+difíciles de cambiar, por lo que la escalabilidad de estas 
+topologías es baja. Las redes estáticas pueden utilizarse 
+con eficiencia en los sistemas en que pueden predecirse el 
+tipo de tráfico de comunicaciones entre sus procesadores.
+</p>
+
+<dt>Clases de redes de interconexión:</dt>
+<b><dd>Formación lineal:</b> Se trata de una red 
+    unidimensional en que los nodos se conectan cada uno 
+    con el siguiente medianteN-1 enlaces formando una 
+    línea.</dd>
+<b><dd>Mallas y toros:</b> Esta red de interconexión es muy 
+    utilizada en la práctica. Las redes en toro son mallas 
+    en que sus filas y columnas tienen conexiones en anillo, 
+    esto contribuye a disminuir su diámetro. Esta pequeña 
+    modificación permite convertir a las mallas en estructuras 
+    simétricas y además reduce su diámetro a la mitad.
+</dd>
+
+        <br> <br> <br>
+        <h1 class="nd"><a href="#99"> INICIO </a></h>
+        <br> <br>
+
+<a name="10"></a>
+<h2 class="derecha">4.5 Casos de estudio.</h2>
+<a name="10"></a>
+<h2>4.5 Casos de estudio.</h2>
+<p>Por numerosos motivos, el procesamiento distribuido se ha 
+    convertido en un área de gran importancia e interés dentro 
+    de la Ciencia de la Computación, produciendo profundas 
+    transformaciones en las líneas de I/D.<br>
+
+Interesa realizar investigación en la especificación, transformación, 
+optimización y evaluación de algoritmos distribuidos y paralelos. 
+Esto incluye el diseño y desarrollo de sistemas paralelos, la 
+transformación de algoritmos secuenciales en paralelos, y las
+ métricas de evaluación de performance sobre distintas plataformas 
+de soporte (hardware y software). Más allá de las mejoras constantes 
+en las arquitecturas físicas de soporte, uno de los mayores desafíos 
+se centra en cómo aprovechar al máximo la potencia de las mismas.</p>
+
+<p>Interesa realizar investigación en la especificación, transformación, 
+optimización y evaluación de algoritmos distribuidos y paralelos. Esto 
+incluye el diseño y desarrollo de sistemas paralelos, la transformación 
+de algoritmos secuenciales en paralelos, y las métricas de evaluación 
+de performance sobre distintas plataformas de soporte (hardware y 
+software). Más allá de las mejoras constantes en las arquitecturas 
+físicas de soporte, uno de los mayores desafíos se centra en cómo 
+aprovechar al máximo la potencia de las mismas.</p>
+
+<dt>Líneas De Investigación Y Desarrollo</dt>
+<dd>• Paralelización de algoritmos secuenciales. 
+    Diseño y optimización de algoritmos.
+<dd>• Arquitecturas multicore y multithreading en multicore.
+<dd>• Arquitecturas multiprocesador.
+<dd>• Modelos de representación y predicción de 
+    performance de algoritmos paralelos.
+<dd>• Mapping y scheduling de aplicaciones paralelas 
+    sobre distintas arquitecturas multiprocesador.
+<dd>• Métricas del paralelismo. Speedup, eficiencia, 
+    rendimiento, granularidad, superlinealidad.
+<dd>• Balance de carga estático y dinámico. Técnicas de balanceo 
+    de carga.
+<dd>• Análisis de los problemas de migración y asignación óptima 
+    de procesos y datos a procesadores. Migración dinámica.
+<dd>• Patrones de diseño de algoritmos paralelos.
+<dd>• Escalabilidad de algoritmos paralelos en arquitecturas 
+    multiprocesador distribuidas.
+<dd>• Implementación de soluciones sobre diferentes modelos 
+    de arquitectura homogéneas y heterogéneas (multicores, 
+    clusters, multiclusters y grid). Ajuste del modelo de 
+    software al modelo de hardware, a fin de optimizar el 
+    sistema paralelo.
+<dd>• Evaluación de performance.
+<dd>• Laboratorios remotos para el acceso transparente a 
+    recursos de cómputo paralelo.
+
+<br><br>
+<dt>Grandes empresas y sus implementaciones con procesamiento paralelo:</dt>
+
+NVIDIA
+<dd>• PYSICS LAYER:
+<dd>• GPU PhysX
+<dd>• CPU PhysX
+<dd>• Graphics Layer:
+<dd>• GPU –DirectX Windows</dd>
+
+INTEL<br>
+<dd>• PYSICS LAYER:
+<dd>• No GPU PhysX
+<dd>• CPU Havok
+<dd>• Graphics Layer:
+<dd>• GPU –Direct X Windows</dd>
+
+AMD<br>
+<dd>• PYSICS LAYER:
+<dd>• No GPU PhysX
+<dd>• CPU Havok
+<dd>• Graphics Layer:
+<dd>• GPU –DirectX Windows
+
+        <br> <br> <br>
+        <h1 class="nd"><a href="#99"> INICIO </a></h>
+        <br> <br>
 </body>
 
 </html>
