@@ -164,7 +164,11 @@ div {
       inset 0 0 1.3rem #bc13fe;
   /* text-align: center; */   
   width: 78.5rem;
-  height: 240.1rem;
+  height: 225.1rem;
+}
+
+div.fin{
+  background-color: #000000;
 }
 
 /* ------------------------------------------------------------- */
